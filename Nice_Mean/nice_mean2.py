@@ -15,7 +15,7 @@
 
 def start(nice=0, mean=0, name=""):
     # get user's name
-    print ("Hello!")
+    print ("Hello! WELCOME TO NICE AND MEAN GAME!")
     name = describe_game(name)
     nice,mean,name = nice_mean(nice,mean,name)
     
