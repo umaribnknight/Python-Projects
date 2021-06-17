@@ -10,7 +10,7 @@ with conn:
 conn = sqlite3.connect('exam.db')
 
 #tuple of names
-files_tuple = ('information.docx', 'Hello.txt', 'myImage.png', 'myMovie.mpg'\
+files_tuple = ('information.docx', 'Hello.txt', 'myImage.png', 'myMovie.mpg', \
              'World.txt', 'data.pdf', 'myPhoto.jpg')
 
 # loop through each object in the tuple to find the names that end in y.
