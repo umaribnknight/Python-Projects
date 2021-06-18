@@ -6,12 +6,12 @@
 
 
 
-class User
+class User:
 #Define the attribute of parent class
-name = 'No Name Provided'
-email = ' '
-password = '1234abcd'
-account_number = 0
+   name = 'No Name Provided'
+   email = ' '
+   password = '1234abcd'
+   account_number = 0
 
 class Driver(User):
 #child class
