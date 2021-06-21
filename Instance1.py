@@ -62,12 +62,10 @@ class Sponsor:
 
 
 
-            if __name__ == "__main__":
-                
-            customer = User()
-            customer.getLoginInfo()
 
-            manager = Employee()
-            manager.getLoginInfo()
+
+if __name__ == "__main__":
+                
+         
 
         
