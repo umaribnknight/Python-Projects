@@ -15,7 +15,7 @@ class User:
 
 #Child Class Employee
 class Employee(User):
-    pay_rate = 14.00
+    pay_rate = "14.00"
     department = "Mens"
     pin_number = "1000"
 
@@ -42,7 +42,7 @@ class Employee(User):
 
 #Child Class
 class Sponsor:
-    pay_out = 100,000
+    pay_out = "100,000"
     department = "Mens"
     pin_number = "1100"
 
@@ -60,6 +60,14 @@ class Sponsor:
 
 
 
+
+
             if __name__ == "__main__":
                 
+            customer = User()
+            customer.getLoginInfo()
+
+            manager = Employee()
+            manager.getLoginInfo()
+
         
