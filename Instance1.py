@@ -36,7 +36,6 @@ class Employee(User):
 
     customer = User()
     customer.getLoginInfo()
-
     manager = Employee()
     manager.getLoginInfo()
 
@@ -64,8 +63,14 @@ class Sponsor:
 
 
 
-if __name__ == "__main__":
+
+
+
+
+
+
+if __name__ == "__main__" :
                 
          
 
-        
+                                        
