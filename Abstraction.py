@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-
+#Parent class
 class Aircraft(ABC):
 
     @abstractmethod
@@ -9,7 +9,7 @@ class Aircraft(ABC):
     @abstractmethod
     def land(self):
         print("All checks completed")
-
+#child class
 class Jet(Aircraft):
 
     def fly(self):
