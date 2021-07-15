@@ -57,7 +57,7 @@ def SourceBrowse():
     # initialdir argument is optional Since multiple
     # files may be selected, converting the selection
     # to list using list()
-    root.files_list = list(filedialog.askopenfilenames(initialdir ="C:/Users/AKASH / Desktop / Lockdown Certificate / Geek For Geek"))
+    root.files_list = list(filedialog.askdirectory(initialdir ="C:/Users/AKASH / Desktop / Lockdown Certificate / Geek For Geek"))
      
     # Displaying the selected files in the root.sourceText
     # Entry using root.sourceText.insert()
@@ -87,12 +87,14 @@ def CopyFile():
         shutil.copy(f, destination_location)
  
     messagebox.showinfo("SUCCESSFULL")
+
+    
      
 def MoveFile():
      
   
     files_list = root.files_list
- 
+    print(files_list)
   
     destination_location = destinationLocation.get()
  
