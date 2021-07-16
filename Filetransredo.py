@@ -78,16 +78,21 @@ def DestinationBrowse():
      
 def CopyFile():
     # Retrieving the source file selected 
-    files_list = root.files_list
+    files_list = root.sourceText.get()
+    files=os.listdir(files_list)
  
-   
-    for f in files_list:
-         
-        # Copying the file to the destination using
-        # the copy() of shutil module copy take the
-        # source file and the destination folder as
-        # the arguments
-        shutil.copy(f, destination_location)
+    destination_location = destinationLocation.get()
+ 
+    # Looping through the files present in the list
+    for f in files:
+        abspath = os.path.join(files_list,f)
+        hrs_24 = datetime.datetime.now() - timedelta(hours=24)
+        modtime = os.path.getmtime(abspath)
+        datetimeF = datetime.datetime.fromtimestamp(modtime)
+        if hrs_24 < datetimeF:
+        # Moving the file to the destination 
+      
+           shutil.copy(f, destination_location)
  
     messagebox.showinfo("SUCCESSFULL")
 
