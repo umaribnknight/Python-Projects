@@ -2,6 +2,9 @@ import shutil
 import tkinter as tk
 from tkinter import *
 from tkinter import messagebox, filedialog #not sure if we need this
+import os
+import datetime
+from datetime import timedelta
      
  
 
@@ -57,7 +60,7 @@ def SourceBrowse():
     # initialdir argument is optional Since multiple
     # files may be selected, converting the selection
     # to list using list()
-    root.files_list = list(filedialog.askdirectory(initialdir ="C:/Users/AKASH / Desktop / Lockdown Certificate / Geek For Geek"))
+    root.files_list = filedialog.askdirectory()
      
     # Displaying the selected files in the root.sourceText
     # Entry using root.sourceText.insert()
@@ -66,7 +69,7 @@ def SourceBrowse():
 def DestinationBrowse():
     # Opening the file-dialog directory prompting
   
-    destinationdirectory = filedialog.askdirectory(initialdir ="C:/Users/AKASH / Desktop / Lockdown Certificate / Geek For Geek")
+    destinationdirectory = filedialog.askdirectory()
  
     # Displaying the selected directory in the
     # root.destinationText Entry using
@@ -93,18 +96,23 @@ def CopyFile():
 def MoveFile():
      
   
-    files_list = root.files_list
-    print(files_list)
-  
+    files_list = root.sourceText.get()
+    files = os.listdir(files_list)
+    
+    
     destination_location = destinationLocation.get()
  
     # Looping through the files present in the list
-    for f in files_list:
-         
+    for f in files:
+        abspath = os.path.join(files_list,f)
+        hrs_24 = datetime.datetime.now() - timedelta(hours=24)
+        modtime = os.path.getmtime(abspath)
+        datetimeF = datetime.datetime.fromtimestamp(modtime)
+        if hrs_24 < datetimeF:
         # Moving the file to the destination 
-        shutil.move(f, destination_location)
- 
-    messagebox.showinfo("SUCCESSFULL")
+           shutil.move(abspath, destination_location)
+
+           messagebox.showinfo("SUCCESSFULL")
  
 # Creating object of tk class
 root = tk.Tk()
