@@ -29,7 +29,7 @@ def balance(request, pk):
             current_total += t.amount
             table_contents.update({t: current_total})
         else:
-            current_total -m t.amount
+            current_total += t.amount
             table_contents.update({t : current_total})
     content = {'account': account, 'table-contents': table_contents, 'balance' : current_total}
     return render(request, 'checkbook/BalanceSheet.html',content)
